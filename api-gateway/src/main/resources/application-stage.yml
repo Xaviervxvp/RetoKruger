@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+      - id: auth
+        uri: http://auth:8080
+        predicates:
+        - Path=/auth/**
+        filters:
+        - RewritePath=/auth(?<segment>/?.*), $\{segment}
+      - id: users
+        uri: http://users:8080
+        predicates:
+        - Path=/users/**
+        filters:
+        - RewritePath=/signer(?<segment>/?.*), $\{segment}
+      - id: notifier
+        uri: http://notifier:8080
+        predicates:
+        - Path=/notifier/**
+        filters:
+        - RewritePath=/notifier(?<segment>/?.*), $\{segment}
+      

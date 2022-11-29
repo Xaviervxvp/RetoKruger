@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "4c2a0693-1ab8-4c5a-bc69-eefe7ff95140",
+		"name": "Krugger Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9012235"
+	},
+	"item": [
+		{
+			"name": "FILTER USERS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMWI0ZmM2My1kZTA4LTRiOTQtODkyZi1iMjU2MmVhYzU4Y2IiLCJpYXQiOjE2NTUxNDg2MjgsImV4cCI6MTY1NTE0ODk4OCwicm9sIjpbIlJPTEVfVVNFUl9ST09UIl19.IDSeb_FJfjUAzIzxqZJ2RNEfL9X6tm1dXdf3pyeu50SNhn2x9xNrBlhXjBCExdSfQQiXgOmWRZvzzQJJwqgXHA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1.0.0/employees?page=0&size=10&vaccinationState=VACCINATED&vaccineType=ASTRAZENECA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1.0.0",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "vaccinationState",
+							"value": "VACCINATED"
+						},
+						{
+							"key": "vaccineType",
+							"value": "ASTRAZENECA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER EMPLOYEES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMWI0ZmM2My1kZTA4LTRiOTQtODkyZi1iMjU2MmVhYzU4Y2IiLCJpYXQiOjE2NTUxNDg2MjgsImV4cCI6MTY1NTE0ODk4OCwicm9sIjpbIlJPTEVfVVNFUl9ST09UIl19.IDSeb_FJfjUAzIzxqZJ2RNEfL9X6tm1dXdf3pyeu50SNhn2x9xNrBlhXjBCExdSfQQiXgOmWRZvzzQJJwqgXHA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ci\": \"1710620467\",\n  \"email\": \"vxvp1992@gmail.com\",\n  \"lastnames\": \"vaca\",\n  \"names\": \"dxavier\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1.0.0/signup/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0.0",
+						"signup",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"reAwD6Yt45pHlz25Wnc4\",\n  \"usernameOrEmail\": \"21b4fc63-de08-4b94-892f-b2562eac58cb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1.0.0/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0.0",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN EMPLOYEE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTUxNDg2NDQsImV4cCI6MTk4NjE3ODgwNTI2fQ.i-KDBhV-AZACzM6sME3Lxjz1WdUWW2Xi8US3U3SilwIY7u-2QVN8oMiAgTp1rVYZqIFNwKD_YcWijgX8PX8VHQ\",\n  \"usernameOrEmail\": \"0d002d33-aaec-4e00-a38c-ecd1a865d39c\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1.0.0/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1.0.0",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD EXTRA INFO EMPLOYEEE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwZDAwMmQzMy1hYWVjLTRlMDAtYTM4Yy1lY2QxYTg2NWQzOWMiLCJpYXQiOjE2NTUxNDg2NjksImV4cCI6MTY1NTE0OTAyOSwicm9sIjpbIlJPTEVfRU1QTE9ZRUUiXX0.kiMhPocMf_cLKOwqKh6q8aNi6ujR0KZPoMnsx1rvcTgtPAwTlSA1PWYKT-4Ta_VfY0kXLJNOlNCUBtcvgkSX8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"address\": {\n    \"neighborhood\": \"string\",\n    \"numHome\": \"string\",\n    \"principalStreet\": \"string\",\n    \"reference\": \"string\",\n    \"secundaryStreet\": \"string\"\n  },\n  \"birthday\": \"1997-06-13\",\n  \"cellphone\": \"0999268194\",\n  \"id\": 1,\n  \"vaccinationState\": \"VACCINATED\",\n  \"vaccines\": [\n    {\n      \"dateVaccine\": \"2022-06-13\",\n      \"dose\": 1,\n      \"type\": \"ASTRAZENECA\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1.0.0/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1.0.0",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

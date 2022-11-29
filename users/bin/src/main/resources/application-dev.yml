@@ -1,0 +1,34 @@
+config:
+  security:
+    user-root:
+      nickname: 21b4fc63-de08-4b94-892f-b2562eac58cb
+      password: reAwD6Yt45pHlz25Wnc4
+    jwt:
+      secret: 7OJMeJBxDMY2UicrxaV5
+      header: Authorization
+      prefix: Bearer
+      expiration: 360000
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true #http://localhost:8080/h2-console
+  sql:
+    init:
+      mode: always
+      
+      
+server:
+  port: 8081

@@ -1,0 +1,34 @@
+config:
+  security:
+    user-root:
+      nickname: 
+      password: 
+    jwt:
+      secret: 
+      header: Authorization
+      prefix: Bearer
+      expiration: 360000
+
+spring:
+  datasource:
+    url: 
+    driver-class-name: 
+    username: 
+    password: 
+  jpa:
+    database-platform: 
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true 
+  sql:
+    init:
+      mode: always
+      
+      
+server:
+  port: 8080
